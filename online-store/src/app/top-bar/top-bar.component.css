@@ -1,0 +1,21 @@
+a h1 
+{
+    font-weight: 600;
+    font-size: 30px;
+    color: #fff;
+}
+.cart
+{
+    cursor: pointer;
+}
+.cart i
+{
+    color: #fff;
+    font-size: 25px;
+}
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/

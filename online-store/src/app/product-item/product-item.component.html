@@ -1,0 +1,34 @@
+<div *ngIf="product != undefined" class="item_prod">
+    <div class="for_delete">
+        {{product.category}}
+        <i class="material-icons" (click)="remove(product.id)">close</i>
+    </div>
+    <img src="{{product.img}}" alt="">
+    <h3>
+        <a href="{{product.kaspi}}">
+            {{product.name}}
+        </a>
+    </h3>
+    <p *ngIf="product.description">
+        <strong style="font-weight: 500;">Description:</strong> {{ product.description }}
+    </p>
+    <div class="rating">
+        <span *ngIf="product.price">
+            <strong style="font-weight: 500;">Price:</strong> {{product.price}} ₸
+        </span>
+        <div style="font-size: 15px;" class="stars">
+            <strong style="font-weight: 500;">Rating:</strong> {{stars(product.rating, true)}}<div style="font-size: 21px; outline: none; margin-top: -1.5px;">{{stars(5 - product.rating, false)}}</div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="buttons_item">
+            <button type="button" (click)="share(product)" class="btns">Share</button>
+            <app-product-alerts [product]="product" (notify)="onNotify()" class="btns"></app-product-alerts>
+        </div>
+        <div class="likes">
+            <i class="material-icons likes_btn" (click)="decrease(product)">remove</i>
+            <div class="likes_number">{{product.likes}}</div>
+            <i class="material-icons likes_btn" (click)="increase(product)">add</i>
+        </div>
+    </div>
+</div>

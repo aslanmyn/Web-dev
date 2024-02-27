@@ -1,0 +1,9 @@
+<div *ngFor="let product of products">
+    <app-product-item *ngIf="product.category == category" [product]="product" (forRemove)="remove($event)" class="product-item"></app-product-item>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
